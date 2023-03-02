@@ -9,11 +9,17 @@ public class Q3 {
 	        for (int i = 0; i < ui; i++) {
 	            A[i] = x.nextInt();
 	        }
-	        for (int i = 0; i < ui - 1; i += 2) {
-	            int temp = A[i];
-	            A[i] = A[i + 1];
-	            A[i + 1] = temp;
-	        }
+	        for (int i = 0; i < ui - 1;) {
+	            if(A[i] + 1 == A[i+1]) {
+			    int temp = A[i];
+			    A[i] = A[i + 1];
+			    A[i + 1] = temp;
+			    i += 2;
+		    }
+	            else {
+	            	i += 1;
+	            }
+		}
 	        System.out.println("The array after swapping consecutive elements:");
 	        for (int i = 0; i < ui; i++) {
 	            System.out.print(A[i] + " ");
